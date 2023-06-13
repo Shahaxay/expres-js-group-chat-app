@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+</head>
+<body>
+    <p id="ans">No chat exist</p>
+    <form method="post" action="/savechat">
+        <input type="text" name="username" id="uid" hidden>
+        <label for="user">Message</label>
+        <br>
+        <input type="text" name="message" id="msg">
+        <button type="submit" id="btn">send</button>
+    </form>
+    <script>
+        document.getElementById('btn').addEventListener("click",(e)=>{
+            document.getElementById('uid').value=localStorage.getItem("username");
+        })
+        //document.getElementById('ans').innerText=fs.readFile(path.join(__dirname,'..','message.text'));
+        document.getElementById('ans').innerHTML="<b>ak</b>";
+
+    </script>
+    
+</body>
+</html>
